@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIYARANJAN S</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <style>
+        /* Global styles */
+        body {
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        a {
+            color: #00bcd4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: slideInDown 1s ease-in-out;
+        }
+
+        @keyframes slideInDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+        }
+
+        h1:hover {
+            transform: scale(1.1);
+        }
+
+        /* Navigation styles */
+        .navigation {
+            position: absolute;
+            top: 20px;
+            left: 40px; /* Adjusted left margin for space */
+            z-index: 1;
+            font-size: 0.9em;
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navigation ul li {
+            display: inline-block;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .navigation ul li a {
+            color: #fff;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navigation ul li a:hover {
+            background-color: #00bcd4;
+            border-color: #00bcd4;
+        }
+
+        .navigation ul li:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Main content styles */
+        main {
+            padding: 20px;
+            position: relative;
+            animation: slideInUp 1s ease-in-out;
+        }
+
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Section styles */
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Profile picture styles */
+        #profile-pic {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Add light grey background shadow */
+            display: block;
+            margin: 0 auto;
+            max-width: 400px;
+            max-height: 400px;
+            float: left;
+            margin-right: 20px;
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        /* Skills styles */
+        .skills-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skill {
+            margin-right: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+            animation: logoScale 0.5s ease forwards;
+        }
+
+        .skill img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            vertical-align: middle;
+            border-radius: 50%; /* Make the logo frame circular */
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animation for skills */
+        @keyframes logoScale {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .navigation {
+                top: 10px;
+                left: 10px;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .skill img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .navigation ul li {
+                margin-right: 5px;
+            }
+
+            section {
+                padding: 10px;
+            }
+
+            .skills-list {
+                justify-content: center;
+            }
+
+            .skill {
+                margin-right: 10px;
+            }
+
+            .skill img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        /* Projects section styles */
+        #projects ul li {
+            opacity: 0; /* Initially hide the projects */
+            transform: translateY(20px); /* Move them down slightly */
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        /* Animation to fade in and slide up the projects */
+        #projects ul li:nth-child(1) {
+            transition-delay: 0.2s; /* Delay for the first project */
+        }
+
+        #projects ul li:nth-child(2) {
+            transition-delay: 0.4s; /* Delay for the second project */
+        }
+
+        #projects ul li:nth-child(3) {
+            transition-delay: 0.6s; /* Delay for the third project */
+        }
+
+        #projects ul li:nth-child(4) {
+            transition-delay: 0.8s; /* Delay for the fourth project */
+        }
+
+        /* When the section comes into view, fade in and slide up the projects */
+        #projects.in-view ul li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hobbies styles */
+        #hobbies ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #hobbies ul li {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        #hobbies ul li:hover {
+            transform: none; /* Disable any transformation on hover */
+            cursor: default; /* Set cursor to default on hover */
+        }
+
+        /* Project title style */
+        #projects ul li strong {
+            font-size: 1.3em; /* Increase font size */
+        }
+
+        /* Project description style */
+        #projects ul li p {
+            font-size: 1em; /* Decrease font size */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PRIYARANJAN S</h1>
+        <div class="navigation">
+            <ul>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <img id="profile-pic" src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/profile.jpg" alt="Profile Picture">
+            <p>I'm Priyaranjan, an Electrical Engineering student with a solid grasp of Power Electronics and DC machines. I'm also enthusiastic about DevOps, which focuses on improving Software Development and Operations. I'm keen to apply my skills in practical situations in these fields.</p>
+        </section>
+        <section id="skills">
+            <h2>SKILLS</h2>
+            <ul class="skills-list">
+                <li class="skill fadeIn"><img src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/aws.jpg" alt="AWS Logo">AWS</li>
+                <li class="skill fadeIn"><img src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/docker.png" alt="Docker Logo">Docker</li>
+                <li class="skill fadeIn"><img src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/office.png" alt="Microsoft Office Logo">Microsoft Office</li>
+                <li class="skill fadeIn"><img src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/python.jpg" alt="Python Logo">Python</li>
+                <li class="skill fadeIn"><img src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/terraform.png" alt="Terraform Logo">Terraform</li>
+                <li class="skill fadeIn"><img src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/cad.png" alt="AutoCAD Logo">AutoCAD</li>
+                <li class="skill fadeIn"><img src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/git.jpg" alt="Git Logo">Git</li>
+                <li class="skill fadeIn"><img src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/matlab.png" alt="MatLAB Logo">MatLAB</li>
+                <!-- Added Jenkins and Kubernetes with their logos -->
+                <li class="skill fadeIn"><img src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/jenkins.jpg" alt="Jenkins Logo">Jenkins</li>
+                <li class="skill fadeIn"><img src="https://my-static-portfolio-website.s3.ap-south-1.amazonaws.com/k8s.jpg" alt="Kubernetes Logo">Kubernetes</li>
+            </ul>
+        </section>
+        <section id="projects" class="in-view">
+            <h2>PROJECTS</h2>
+            <ul>
+                <li>
+                    <strong>Modelling and Simulation of Hydrogen-Based Energy Storage System:</strong>
+                    <p>Analysis and simulation of a hybrid energy storage system, which combines a battery and a fuel cell. The system works simultaneously to facilitate the transition from fossil fuels to renewable energy sources.</p>
+                </li>
+                <li>
+                    <strong>Automatic Voltage Regulator using PID Controller:</strong>
+                    <p>A simple representation of an Automatic Voltage Regulator that simulates the disturbances in voltage and returns to steady state using a PID controller.</p>
+                </li>
+                <li>
+                    <strong>EV Charger with G2V & V2H modes using DC-DC Converter with Control Unit:</strong>
+                    <p>A Bi-directional Electric Vehicle charger with allows Grid-to-Vehicle (G2V) mode and Vehicle-to-Home (V2H) mode of operation built using a DC-DC Chopper with MOSFET switched control unit to power loads and charge battery.</p>
+                </li>
+                <li>
+                    <strong>Static Website Hosting using Amazon S3 Bucket automated with Terraform:</strong>
+                    <p>A portfolio website built using AWS [S3 Bucket], completely automated with Terraform HCL. You're looking at it right now 😉!</p>
+                </li>
+                <!-- Added projects -->
+                <li>
+                    <strong>Plant Disease Detection using CNN:</strong>
+                    <p>leverages Convolutional Neural Networks (CNNs) to accurately identify diseases in plants from images. Deployed as a web application using Streamlit, containerized with Docker, ensuring seamless deployment and scalability.</p>
+                </li>
+                <li>
+                    <strong>Commercial CI/CD Pipeline:</strong>
+                    <p>automates software delivery from code to deployment. Jenkins orchestrates the process, integrating Maven for builds, SonarQube for code quality, and Trivy for image security. Docker containers are built and stored in Amazon ECR. Kubernetes clusters, managed with kubeadm, deploy the application. Prometheus and Grafana monitor system and website health.</p>
+                </li>
+            </ul>
+        </section>
+        <section id="hobbies">
+            <h2>HOBBIES</h2>
+            <ul>
+                <li>Watching Anime 🐉</li>
+                <li>Hanging out with Friends 🚗</li>
+                <li>Playing Football ⚽</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>CONTACT</h2>
+            <div class="contact-info">
+                <p><strong>Address:</strong> Coimbatore, Tamil Nadu.</p>
+                <p><strong>Phone:</strong> <a href="tel:+919503276745">+91 9503276745</a></p>
+                <p><strong>Email:</strong> <a href="mailto:ranjansks143@gmail.com">ranjansks143@gmail.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/priyaranjan-s-6876a1278/" target="_blank">Priyaranjan S</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/RanjanPRS" target="_blank">RanjanPRS</a></p>
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ranjan.af/" target="_blank">@ranjan.af</a></p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
